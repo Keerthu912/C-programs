@@ -1,0 +1,36 @@
+Method - 01
+#include<stdio.h>
+int main()
+{
+  int num,sum=0;
+  scanf("%d",&num);
+  while(num!=0){
+    sum = sum+num%10;
+    num = num/10;
+  }
+  printf("%d",sum);
+  return 0;
+}
+
+Method - 02
+#include<stdio.h>
+
+int getSum(int num, int sum){
+    
+    if(num == 0)
+        return sum;
+
+    sum += num % 10;
+    num /= 10;
+
+    return getSum(num, sum);
+}
+int main ()
+{
+    int num, sum = 0;
+    scanf("%d",&num);
+    printf("Sum: %d\n",getSum(num, sum));
+ 
+    return 0;
+
+}
